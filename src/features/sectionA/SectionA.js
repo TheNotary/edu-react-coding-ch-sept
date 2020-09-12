@@ -31,7 +31,7 @@ const SectionA = () => {
       <div>I'm Section A! Array of multiples.</div>
       <InputForm sectionA={sectionA} onChange={handleChange} errors={errors} />
       <div>
-        Answer: <span>{getAnswer}</span>
+        Answer: <span data-testid="answer">{getAnswer}</span>
       </div>
     </>
   );
