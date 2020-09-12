@@ -36,8 +36,8 @@ const SectionA = () => {
       <h1>Section A</h1>
       <div>I'm Section A! Array of multiples.</div>
       <InputForm sectionA={sectionA} onChange={handleChange} errors={errors} />
-      <div>
-        Answer: <span data-testid="answer">{getAnswer}</span>
+      <div style={{ wordWrap: "break-word" }}>
+        Answer: <div data-testid="answer">{getAnswer}</div>
       </div>
     </>
   );
