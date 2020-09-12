@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import InputForm from "./InputForm";
 
+export function sectionALogic(number, len) {
+  // const answer = (parseInt(number) + parseInt(len)).toString();
+  let numArray = [];
+  for (let i = 0; i < len; i++) {
+    numArray.push(number + i);
+  }
+  return numArray;
+}
+
 const SectionA = () => {
   const [sectionA, setSectionA] = useState({
     number: "1",
@@ -10,7 +19,9 @@ const SectionA = () => {
   const errors = {};
 
   useEffect(() => {
-    const answer = sectionALogic(sectionA);
+    const answer = JSON.stringify(
+      sectionALogic(parseInt(sectionA.number), parseInt(sectionA.len))
+    );
     setAnswer(answer);
   }, [sectionA]);
 
@@ -18,11 +29,6 @@ const SectionA = () => {
     setSectionA((prevSectionA) => {
       return { ...prevSectionA, [name]: value };
     });
-  }
-
-  function sectionALogic({ number, len }) {
-    const answer = (parseInt(number) + parseInt(len)).toString();
-    return answer;
   }
 
   return (

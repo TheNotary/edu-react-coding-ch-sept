@@ -4,10 +4,11 @@ import { render, fireEvent } from "../../../tools/test-utils"; // We're using ou
 import "@testing-library/jest-dom/extend-expect";
 
 // Stuff being tested
-import SectionA from "./SectionA";
+import SectionA, { sectionALogic } from "./SectionA";
 import sectionAReducer from "./sectionASlice";
 const rootReducer = { sectionA: sectionAReducer };
 
+// Test the UI entirely
 test("renders using redux with defaults and increment the count", () => {
   // Setup experiment
   const { getByTestId } = render(<SectionA />, {
@@ -24,5 +25,11 @@ test("renders using redux with defaults and increment the count", () => {
   fireEvent.change(getLenElement(), { target: { value: "3" } });
 
   // Assert hypothesis
-  expect(getAnswerElement()).toHaveTextContent("[10, 11, 12]");
+  expect(getAnswerElement()).toHaveTextContent("[10,11,12]");
+});
+
+// TDD the function logic ;)
+test("sectionALogic works good", () => {
+  const answer = sectionALogic(10, 3);
+  expect(answer).toEqual([10, 11, 12]);
 });
