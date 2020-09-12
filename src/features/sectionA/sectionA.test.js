@@ -25,11 +25,11 @@ test("renders using redux with defaults and increment the count", () => {
   fireEvent.change(getLenElement(), { target: { value: "3" } });
 
   // Assert hypothesis
-  expect(getAnswerElement()).toHaveTextContent("[10,11,12]");
+  expect(getAnswerElement()).toHaveTextContent("[10,20,30]");
 });
 
 // TDD the function logic ;)
 test("sectionALogic works good", () => {
   const answer = sectionALogic(10, 3);
-  expect(answer).toEqual([10, 11, 12]);
+  expect(answer).toEqual([10, 20, 30]);
 });
