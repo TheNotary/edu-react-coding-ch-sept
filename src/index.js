@@ -11,7 +11,6 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router basename={process.env.REACT_APP_PUBLIC_SUFIX}>
-        <div>REACT_APP_PUBLIC_SUFIX: {process.env.REACT_APP_PUBLIC_SUFIX}</div>
         <App />
       </Router>
     </Provider>
