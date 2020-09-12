@@ -4,8 +4,8 @@ import InputForm from "./InputForm";
 export function sectionALogic(number, len) {
   // const answer = (parseInt(number) + parseInt(len)).toString();
   let numArray = [];
-  for (let i = 0; i < len; i++) {
-    numArray.push(number + i);
+  for (let i = 1; i <= len; i++) {
+    numArray.push(number * i);
   }
   return numArray;
 }
